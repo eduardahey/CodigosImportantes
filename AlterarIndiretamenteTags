@@ -1,0 +1,41 @@
+    <div class="smartcapture-controls"><div class="sc-formfield-label"><label for="Telefone">Telefone *</label></div>
+    <div class="sc-formfield-input"><input type="text" id="Telefone" name="Telefone" data-field-type="Text" required="required" data-validation-message="Please fill out this field."></div>
+    </div>
+    
+    <div class="smartcapture-controls"><div class="sc-formfield-label"><label for="Mensagem">Mensagem</label></div>
+    <div class="sc-formfield-input"><input type="text" id="Mensagem" name="Mensagem" data-field-type="Text"></div>
+    </div>
+    
+    <div class="smartcapture-controls"><div class="sc-formfield-label"><label for="Captcha">Captcha *</label></div>
+    <div class="sc-formfield-input"><input type="text" id="Captcha" name="Captcha" data-field-type="Text" required="required" data-validation-message="Campo Obrigatório."></div>
+    </div>
+
+
+    <script type="text/javascript">
+    
+    let inputTelefone = document.querySelector("input[name='Telefone']");
+    inputTelefone.id = "phone";
+      
+    let labelCaptcha = document.querySelector("label[for='Captcha']");
+    labelCaptcha.setAttribute("id", "captchaLabel");
+      
+    let inputCaptcha = document.querySelector("input[name='Captcha']");
+    inputCaptcha.setAttribute("oninput", "validateCaptcha()");
+      
+    let warningDiv = document.createElement('div');
+    warningDiv.id = 'warningCaptcha';
+    warningDiv.style.display = 'none';
+    warningDiv.style.color = '#ffffff';
+    warningDiv.style.fontSize = '11px';
+    warningDiv.style.fontFamily = 'arial';
+    warningDiv.style.marginTop = '5px';
+    warningDiv.innerHTML = 'Resultado incorreto';
+    inputCaptcha.parentNode.appendChild(warningDiv);
+      
+    let inputMensagem = document.getElementById('Mensagem');
+    let textareaMensagem = document.createElement('textarea');
+    textareaMensagem.id = 'Mensagem';
+    textareaMensagem.name = 'Mensagem';
+    textareaMensagem.setAttribute('data-field-type', 'Textarea');
+    inputMensagem.parentNode.replaceChild(textareaMensagem, inputMensagem);
+   </script>
